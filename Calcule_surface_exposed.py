@@ -1,4 +1,4 @@
-"""A Python which implements Shrake-Rupley algorithm to calculate the solvent exposed surface area of a protein.
+"""A Python script which implements Shrake-Rupley algorithm to calculate the solvent exposed surface area of a protein.
 
 Return:
 - A value for all the protein
