@@ -1,0 +1,12 @@
+name: projet_court
+channels:
+    - defaults
+    - bioconda
+    - conda-forge
+dependencies:
+    - python=3.11
+    - numpy
+    - matplotlib
+    - pandas
+    - biopython
+    
