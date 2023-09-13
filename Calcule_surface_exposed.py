@@ -1,4 +1,4 @@
-"""A Python code that calculates the solvent exposed surface area of a protein.
+"""A Python which implements Shrake-Rupley algorithm to calculate the solvent exposed surface area of a protein.
 
 Return:
 - A value for all the protein
@@ -10,7 +10,7 @@ __author__ = "Aurélien Desvilles"
 __contact__ = "desvillesaurelien@gmail.com"
 __institution__ = "Université Paris Cité"
 __date__ = "13/09/2023"
-__version__ = "Python 3.9.13"
+__version__ = "Python 3.11.4"
 
 
 import numpy as np
@@ -36,7 +36,8 @@ Functions
 """
 
 def parse_PDB(file_pdb):
-    """Parse pdb file and return for each no hydrogen :
+    """Parse pdb file 
+    Return = data frame with for each no hydrogen atom :
     -atome name
     -atome type 
     -Amino acid type
@@ -89,7 +90,7 @@ def parse_PDB(file_pdb):
 
 
 def compute_sphere_area(radius):
-    """ Compute area for a spheric tool (for example an atom) """
+    """ Compute area for a spheric tool (for example an atom)"""
     area = 4 * math.pi * (radius ** 2)
     return area
 
@@ -98,6 +99,7 @@ def compute_sphere_area(radius):
 def generate_fibonacci_sphere_points(num_points, radius, center):
     """ Uniformly generate a number of points distributed around a sphere of predefined center and radius.
     Refereces: https://extremelearning.com.au/how-to-evenly-distribute-points-on-a-sphere-more-effectively-than-the-canonical-fibonacci-lattice/
+    Return = a list of lists[x,y,z]
     """
     coords = []
     i = np.arange(0, num_points) 
@@ -125,6 +127,7 @@ def points_without_proximity(points1, points2, distance_threshold):
     """Compute the points of a first list for which the
     distance with all the points of a second list is less 
     than a threshold distance.
+    Return = a list of points[x,y,z]
     """
     points_without_proximity = []
 
